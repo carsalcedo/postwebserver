@@ -16,8 +16,10 @@ app.use(bodyParser.urlencoded({limit: "150mb", extended: true}));
 
 app.use('/posts', postRoutes);
 app.use('/user', userRoutes);
+app.get('/', (req, res) =>{
+    res.send("SERVER IS RUNNING")
+})
 
-//const CONNETION_URL = 'mongodb+srv://nando:235813@cluster0.z4eey9c.mongodb.net/?retryWrites=true&w=majority'
 const PORT = process.env.PORT || 5000;
 
 //mongoose.set("strictQuery", true);
